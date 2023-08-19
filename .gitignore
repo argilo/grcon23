@@ -6,6 +6,9 @@ __pycache__
 /demod/demod.c32
 /demod/demod.sigmf-data
 /demod/solution*.py
+/qam/qam_symbols.dat
+/qam/qam.sigmf-data
+/qam/qam64.py
 /sigid/freedv_paint_flag.raw
 /stars/interpolated.c32
 /stars/shape.py
