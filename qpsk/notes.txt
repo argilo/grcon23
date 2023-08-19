@@ -1,0 +1,6 @@
+* Use https://shinao.github.io/PathToPoints/
+* Select "Generate from text"
+  * Font: Roboto
+  * Font size: 240
+  * Points every x length: 5
+* Expand "All Paths" and copy text
