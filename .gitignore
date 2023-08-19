@@ -9,6 +9,9 @@ __pycache__
 /qam/qam_symbols.dat
 /qam/qam.sigmf-data
 /qam/qam64.py
+/qpsk/broken2.sigmf-data
+/qpsk/interpolated.c32
+/qpsk/shape.py
 /sigid/freedv_paint_flag.raw
 /stars/interpolated.c32
 /stars/shape.py
