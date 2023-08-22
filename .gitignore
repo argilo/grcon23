@@ -13,6 +13,11 @@ __pycache__
 /qpsk/interpolated.c32
 /qpsk/shape.py
 /sigid/freedv_paint_flag.raw
+/sigid/part4-flag2.raw
+/sigid/freedv.s16
+/sigid/freedv_padded.s16
+/sigid/freedv.py
+/sigid/sigid4.sigmf-data
 /stars/interpolated.c32
 /stars/shape.py
 /stars/stars.sigmf-data

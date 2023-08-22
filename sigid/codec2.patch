@@ -5,19 +5,19 @@ index 2a1c4a4..b8a4639 100644
 @@ -181,6 +181,11 @@ struct FDMDV *fdmdv_create(int Nc) {
    f->sig_pwr_av = 0.0;
    f->foff_filt = 0.0;
- 
+
 +  FILE *flag_file = fopen("/home/argilo/git/grcon23/sigid/freedv_paint_flag.raw", "rb");
-+  f->paint_rows = fread(f->paint_data, 1, 220 * 17, flag_file) / 17;
++  f->paint_rows = fread(f->paint_data, 1, 260 * 17, flag_file) / 17;
 +  fclose(flag_file);
 +  f->paint_current_row = 0;
 +
    return f;
  }
- 
+
 @@ -550,9 +555,27 @@ void fdm_upconvert(COMP tx_fdm[], int Nc, COMP tx_baseband[NC + 1][M_FAC],
- 
+
  \*---------------------------------------------------------------------------*/
- 
+
 +static double paint_gain(unsigned char color) {
 +  return pow(10.0, (color - 255.0) / 255.0);
 +}
@@ -40,7 +40,7 @@ index 2a1c4a4..b8a4639 100644
 +  gains[16].imag = 0;
 +
    PROFILE_VAR(mod_start, tx_filter_and_upconvert_start);
- 
+
    PROFILE_SAMPLE(mod_start);
 @@ -561,6 +584,9 @@ void fdmdv_mod(struct FDMDV *fdmdv, COMP tx_fdm[], int tx_bits[],
    memcpy(fdmdv->prev_tx_symbols, tx_symbols, sizeof(COMP) * (fdmdv->Nc + 1));
@@ -54,12 +54,12 @@ index 2a1c4a4..b8a4639 100644
                            &fdmdv->fbb_phase_tx, fdmdv->fbb_rect);
 @@ -568,6 +594,8 @@ void fdmdv_mod(struct FDMDV *fdmdv, COMP tx_fdm[], int tx_bits[],
                            "    tx_filter_and_upconvert");
- 
+
    *sync_bit = fdmdv->tx_pilot_bit;
 +
 +  fdmdv->paint_current_row = (fdmdv->paint_current_row + 1) % (fdmdv->paint_rows * REPEATS);
  }
- 
+
  /*---------------------------------------------------------------------------*\
 diff --git a/src/fdmdv_internal.h b/src/fdmdv_internal.h
 index cb3bea2..5ea5f94 100644
@@ -67,14 +67,14 @@ index cb3bea2..5ea5f94 100644
 +++ b/src/fdmdv_internal.h
 @@ -161,6 +161,10 @@ struct FDMDV {
    /* channel simulation */
- 
+
    float sig_pwr_av;
 +
-+  unsigned char paint_data[220][17];
++  unsigned char paint_data[260][17];
 +  int paint_rows;
 +  int paint_current_row;
  };
- 
+
  /*---------------------------------------------------------------------------*\
 diff --git a/src/freedv_tx.c b/src/freedv_tx.c
 index 4f1325b..0f912af 100644
@@ -85,7 +85,7 @@ index 4f1325b..0f912af 100644
      /* set up callback for txt msg chars */
      struct my_callback_state my_cb_state;
 -    sprintf(my_cb_state.tx_str, "cq cq cq hello world\r");
-+    sprintf(my_cb_state.tx_str, "This is VE3IRR/W7. The flag is flag{d1giTal_v01cE_oN_HF}.\r");
++    sprintf(my_cb_state.tx_str, "This is VE3IRR. Flag 3 is flag{d1giTal_v01cE_oN_HF}.\r");
      my_cb_state.ptx_str = my_cb_state.tx_str;
      my_cb_state.calls = 0;
      freedv_set_callback_txt(freedv, NULL, &my_get_next_tx_char, &my_cb_state);
