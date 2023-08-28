@@ -1,0 +1,8 @@
+Part 1:
+"Well hello there GRCon! The flag is {1023_is_th3_mag1C_NuMb3R}. See you later."
+
+Part 2:
+
+"Greetings! Flag 1 is flag{cDmA_i5_fuN}. Now see what else there might be here.                 "
+"                          We meet again. Flag 2 is flag{but_wa1T_th3reS_m0re}. Until next time."
+"                              And flag 3 is flag{l0ts_0f_c0d3s!}. Bye!                         "

@@ -1,4 +1,12 @@
 __pycache__
+/cdma/*_epy_block*.py
+/cdma/bits*.dat
+/cdma/gold1.sigmf-data
+/cdma/gold2.sigmf-data
+/cdma/part1.py
+/cdma/part2.py
+/cdma/solution1.py
+/cdma/solution2.py
 /demod/ask.py
 /demod/fsk.py
 /demod/psk.py
