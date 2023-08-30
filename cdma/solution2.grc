@@ -202,7 +202,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [752, 660.0]
+    coordinate: [1008, 556.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -233,7 +233,8 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '[(prn1[n // sps]*2 - 1) / (len(prn1)*sps) for n in range(len(prn1) * sps)][::-1]'
+    value: '[40 * (prn1[n // sps]*2 - 1) / (len(prn1)*sps) for n in range(len(prn1)
+      * sps)][::-1]'
   states:
     bus_sink: false
     bus_source: false
@@ -245,7 +246,8 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '[(prn2[n // sps]*2 - 1) / (len(prn2)*sps) for n in range(len(prn2) * sps)][::-1]'
+    value: '[40 * (prn2[n // sps]*2 - 1) / (len(prn2)*sps) for n in range(len(prn2)
+      * sps)][::-1]'
   states:
     bus_sink: false
     bus_source: false
@@ -257,7 +259,8 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '[(prn3[n // sps]*2 - 1) / (len(prn3)*sps) for n in range(len(prn3) * sps)][::-1]'
+    value: '[40 * (prn3[n // sps]*2 - 1) / (len(prn3)*sps) for n in range(len(prn3)
+      * sps)][::-1]'
   states:
     bus_sink: false
     bus_source: false
@@ -265,22 +268,6 @@ blocks:
     coordinate: [152, 404.0]
     rotation: 0
     state: enabled
-- name: blocks_complex_to_mag_squared_0
-  id: blocks_complex_to_mag_squared
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [744, 24.0]
-    rotation: 0
-    state: true
 - name: blocks_file_sink_0
   id: blocks_file_sink
   parameters:
@@ -296,8 +283,8 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 428.0]
-    rotation: 180
+    coordinate: [1424, -4.0]
+    rotation: 0
     state: true
 - name: blocks_file_sink_0_0
   id: blocks_file_sink
@@ -314,7 +301,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1312, 180.0]
+    coordinate: [1416, 180.0]
     rotation: 0
     state: true
 - name: blocks_file_sink_0_0_0
@@ -332,7 +319,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1312, 356.0]
+    coordinate: [1424, 356.0]
     rotation: 0
     state: true
 - name: blocks_file_source_0
@@ -371,8 +358,42 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [504, 520.0]
-    rotation: 180
+    coordinate: [1320, 48.0]
+    rotation: 0
+    state: true
+- name: blocks_null_sink_0_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '3'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1320, 232.0]
+    rotation: 0
+    state: true
+- name: blocks_null_sink_0_1
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '3'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1320, 408.0]
+    rotation: 0
     state: true
 - name: blocks_throttle2_0
   id: blocks_throttle2
@@ -412,8 +433,8 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [712, 488.0]
-    rotation: 180
+    coordinate: [1008, 16.0]
+    rotation: 0
     state: true
 - name: digital_constellation_receiver_cb_0_0
   id: digital_constellation_receiver_cb
@@ -712,7 +733,7 @@ blocks:
     color1: '"blue"'
     color10: '"red"'
     color2: '"red"'
-    color3: '"red"'
+    color3: '"green"'
     color4: '"red"'
     color5: '"red"'
     color6: '"red"'
@@ -744,7 +765,7 @@ blocks:
     marker8: '0'
     marker9: '0'
     name: '""'
-    nconnections: '1'
+    nconnections: '3'
     size: '50'
     style1: '0'
     style10: '0'
@@ -781,8 +802,8 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [408, 636.0]
-    rotation: 180
+    coordinate: [1728, 168.0]
+    rotation: 0
     state: true
 - name: qtgui_time_sink_x_0
   id: qtgui_time_sink_x
@@ -838,7 +859,7 @@ blocks:
     marker8: '-1'
     marker9: '-1'
     name: '""'
-    nconnections: '1'
+    nconnections: '3'
     size: '65536'
     srate: samp_rate
     stemplot: 'False'
@@ -878,109 +899,11 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [744, 76.0]
-    rotation: 0
-    state: true
-- name: qtgui_time_sink_x_1
-  id: qtgui_time_sink_x
-  parameters:
-    affinity: ''
-    alias: ''
-    alpha1: '1.0'
-    alpha10: '1.0'
-    alpha2: '1.0'
-    alpha3: '1.0'
-    alpha4: '1.0'
-    alpha5: '1.0'
-    alpha6: '1.0'
-    alpha7: '1.0'
-    alpha8: '1.0'
-    alpha9: '1.0'
-    autoscale: 'False'
-    axislabels: 'True'
-    color1: blue
-    color10: dark blue
-    color2: red
-    color3: green
-    color4: black
-    color5: cyan
-    color6: magenta
-    color7: yellow
-    color8: dark red
-    color9: dark green
-    comment: ''
-    ctrlpanel: 'False'
-    entags: 'True'
-    grid: 'False'
-    gui_hint: ''
-    label1: Signal 1
-    label10: Signal 10
-    label2: Signal 2
-    label3: Signal 3
-    label4: Signal 4
-    label5: Signal 5
-    label6: Signal 6
-    label7: Signal 7
-    label8: Signal 8
-    label9: Signal 9
-    legend: 'True'
-    marker1: '-1'
-    marker10: '-1'
-    marker2: '-1'
-    marker3: '-1'
-    marker4: '-1'
-    marker5: '-1'
-    marker6: '-1'
-    marker7: '-1'
-    marker8: '-1'
-    marker9: '-1'
-    name: '""'
-    nconnections: '1'
-    size: '65536'
-    srate: samp_rate
-    stemplot: 'False'
-    style1: '1'
-    style10: '1'
-    style2: '1'
-    style3: '1'
-    style4: '1'
-    style5: '1'
-    style6: '1'
-    style7: '1'
-    style8: '1'
-    style9: '1'
-    tr_chan: '0'
-    tr_delay: '0'
-    tr_level: '0.0'
-    tr_mode: qtgui.TRIG_MODE_FREE
-    tr_slope: qtgui.TRIG_SLOPE_POS
-    tr_tag: '""'
-    type: float
-    update_time: '0.10'
-    width1: '1'
-    width10: '1'
-    width2: '1'
-    width3: '1'
-    width4: '1'
-    width5: '1'
-    width6: '1'
-    width7: '1'
-    width8: '1'
-    width9: '1'
-    ylabel: Amplitude
-    ymax: '1'
-    ymin: '-1'
-    yunit: '""'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [952, 92.0]
+    coordinate: [768, 32.0]
     rotation: 0
     state: true
 
 connections:
-- [blocks_complex_to_mag_squared_0, '0', qtgui_time_sink_x_1, '0']
 - [blocks_file_source_0, '0', blocks_throttle2_0, '0']
 - [blocks_throttle2_0, '0', fft_filter_xxx_0, '0']
 - [blocks_throttle2_0, '0', fft_filter_xxx_0_0, '0']
@@ -991,15 +914,24 @@ connections:
 - [digital_constellation_receiver_cb_0, '3', blocks_null_sink_0, '2']
 - [digital_constellation_receiver_cb_0, '4', qtgui_const_sink_x_0, '0']
 - [digital_constellation_receiver_cb_0_0, '0', blocks_file_sink_0_0, '0']
+- [digital_constellation_receiver_cb_0_0, '1', blocks_null_sink_0_0, '0']
+- [digital_constellation_receiver_cb_0_0, '2', blocks_null_sink_0_0, '1']
+- [digital_constellation_receiver_cb_0_0, '3', blocks_null_sink_0_0, '2']
+- [digital_constellation_receiver_cb_0_0, '4', qtgui_const_sink_x_0, '1']
 - [digital_constellation_receiver_cb_0_0_0, '0', blocks_file_sink_0_0_0, '0']
+- [digital_constellation_receiver_cb_0_0_0, '1', blocks_null_sink_0_1, '0']
+- [digital_constellation_receiver_cb_0_0_0, '2', blocks_null_sink_0_1, '1']
+- [digital_constellation_receiver_cb_0_0_0, '3', blocks_null_sink_0_1, '2']
+- [digital_constellation_receiver_cb_0_0_0, '4', qtgui_const_sink_x_0, '2']
 - [epy_block_0, '0', digital_constellation_receiver_cb_0, '0']
 - [epy_block_0_0, '0', digital_constellation_receiver_cb_0_0, '0']
 - [epy_block_0_0_0, '0', digital_constellation_receiver_cb_0_0_0, '0']
-- [fft_filter_xxx_0, '0', blocks_complex_to_mag_squared_0, '0']
 - [fft_filter_xxx_0, '0', epy_block_0, '0']
 - [fft_filter_xxx_0, '0', qtgui_time_sink_x_0, '0']
 - [fft_filter_xxx_0_0, '0', epy_block_0_0, '0']
+- [fft_filter_xxx_0_0, '0', qtgui_time_sink_x_0, '1']
 - [fft_filter_xxx_0_0_0, '0', epy_block_0_0_0, '0']
+- [fft_filter_xxx_0_0_0, '0', qtgui_time_sink_x_0, '2']
 
 metadata:
   file_format: 1
