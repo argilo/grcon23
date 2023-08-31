@@ -68,8 +68,8 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"Well hello there GRCon! The flag is {1023_is_th3_mag1C_NuMb3R}. See you
-      later."'
+    value: '"Well hello there GRCon! The flag is flag{1023_is_th3_mag1C_NuMb3R}. See
+      you later."'
   states:
     bus_sink: false
     bus_source: false
