@@ -26,6 +26,9 @@ __pycache__
 /sigid/freedv_padded.s16
 /sigid/freedv.py
 /sigid/sigid4.sigmf-data
+/sigid/m17.bin
+/sigid/m17.py
+/sigid/sigid5.sigmf-data
 /stars/interpolated.c32
 /stars/shape.py
 /stars/stars.sigmf-data

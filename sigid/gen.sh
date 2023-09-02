@@ -20,3 +20,7 @@ cat <(dd if=/dev/zero bs=2 count=40000) freedv.s16 <(dd if=/dev/zero bs=2 count=
 
 grcc freedv.grc
 ./freedv.py
+
+grcc m17.grc
+cat <(dd if=/dev/zero bs=16000 count=3) <(sox m17_flag.wav -r 8000 -t raw -) | ~/git/m17-cxx-demod/build/apps/m17-mod -S VE3IRR -b > m17.bin
+python3 m17.py
